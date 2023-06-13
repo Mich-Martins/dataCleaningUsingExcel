@@ -1,0 +1,82 @@
+# Data Cleaning Using Excel/Google_Spreadsheet V.0.1
+
+## Overview
+
+Data cleaning involves correcting or deleting inaccurate, damaged, improperly formatted, duplicate, or insufficient data from a dataset. There are numerous potential for 
+data duplication or labeling errors when merging various data sources. For this documentation, i will be using the google spreedsheet for the cleaning and learning process.
+
+## About the Data
+
+This dataset was collected from kenji explain in one of his vlog. you can check out the video if the documentation is not explanatory enough for learning.
+
+## Starting with the dataset
+
+So long the data is in excel as shown below.
+
+![alt text](image.jpg)
+
+**Step I**
+- I highlighted the whole data using the ==ctrl A==
+- select the home tab and search for the format to select ==autofit column width== and ==autofit row height==
+
+Now the data looks more better in the format below
+
+![alt text](image.jpg)
+
+**Step II**
+- From the table, the Client column B in the dataset needs some formatting with the text in bracket. However, it needs to be removed.
+- Highlight the Client column, from the home tab, search for ==Find and replace==, then select the ==replace== option to remove the text in bracket by typing (*) in the ==find== input, leave
+the ==replace== input blank as we need the text in bracket to be removed.
+
+![alt text](image.jpg)
+
+**Step III**
+- From the new formatted Client column B, we need to change the text to lower case, select Column B and right clicke, scrolle down and select ==insert column left/right==
+- From the new inserted column (column C), write the function ===LOWER(B2)== then flash fill.
+- Select column C by pressing ==ctrl + shift + arrow down== and press ctrl C, from the home tab, locate the ==paste icon== and select ==paste value==.
+- Delete column B to make the column C ==new Client column B==
+
+![alt text](image.jpg)
+
+Observing the next column, the text in column C is quite improperly formatted
+**Step IV**
+- Insert a new column beside Contact column C by clicking on column E, press ==ctrl space== and press ==ctrl shift +==
+- From the new column (Column D), use the function ==TRIM(PROPER(C2))== to correct the text. The trim function is to remove spaces while the proper function is to make the first letter 
+of each word start with an uppercase then then the rest will be lowercase.
+- copy the column and paste as values, Delete column D to make column C the new Contact Column.
+
+![alt text](image.jpg)
+
+**Step V**
+- The Department column in the dataset as an underscore in the text which indicate department and region all together.
+- Create a new column F called the Region column.
+- Highlight the department column, from the menu ribbon, select the data tab and select ==Text to column==.
+- Choose delimiter and click the option for other by putting the underscore delimiter and click finish once the delimiter has been seperated.
+
+**Step VI**
+- This step require removing duplicate from the dataset if there is any.
+- This is done by highlighting the entire dataset using the ctrl A
+- From the Data tab, locate the ==manage duplicate/remove duplicate== option and click ok to confirm.
+
+**Step VII**
+This step is to look out for blank cell and fill it up.
+- select a blank cell then hightlight the whole dataset using the ctrl A.
+- From the home tab, select the ==find and replace== by clicking the ==go to special== option
+- From the pop up option, select the blank option and click ok.
+- Go to the formula bar and type in NA and click ==ctrl Enter==
+
+**Step VIII**
+From the dataset in the profit margin column, we could notice some form of error showing ==#VALUE== in the column and this is due to incorrect answers from the calculation done in the column. 
+Therefore, we can correct this error by using the ==iferror function==
+- double click on the first value of the profit margin column
+- From the formula bar change the calculation using the ===IFERROR(H2/G2,"NA")== 
+- Do a flash fill to correct the error down the column.
+
+**Step IX**
+Finally format the table.
+- Highlight the table by clicking the ctrl A
+- From the Home tab, select the ==format Table== option and choose a format of your choice
+
+
+
+
